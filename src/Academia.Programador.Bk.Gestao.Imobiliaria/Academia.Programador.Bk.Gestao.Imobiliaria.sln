@@ -11,13 +11,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-DAO", "3-DAO", "{12F15B04
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Testes", "4-Testes", "{653F425B-3F53-48C2-AFF1-42D6F125601B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academia.Programador.Bk.Gestao.Imobiliaria.Dominio", "Academia.Programador.Bk.Gestao.Imobiliaria.Dominio\Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.csproj", "{BE1F1BC3-E484-4566-AABF-D50BBBBD0E1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academia.Programador.Bk.Gestao.Imobiliaria.Dominio", "Academia.Programador.Bk.Gestao.Imobiliaria.Dominio\Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.csproj", "{BE1F1BC3-E484-4566-AABF-D50BBBBD0E1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academia.Programador.Bk.Gestao.Imobiliaria.DAO", "Academia.Programador.Bk.Gestao.Imobiliaria.DAO\Academia.Programador.Bk.Gestao.Imobiliaria.DAO.csproj", "{2151CAC2-478B-4700-9C85-849E7B7F8F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academia.Programador.Bk.Gestao.Imobiliaria.DAO", "Academia.Programador.Bk.Gestao.Imobiliaria.DAO\Academia.Programador.Bk.Gestao.Imobiliaria.DAO.csproj", "{2151CAC2-478B-4700-9C85-849E7B7F8F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academia.Programador.Bk.Gestao.Imobiliaria.Web", "Academia.Programador.Bk.Gestao.Imobiliaria.Web\Academia.Programador.Bk.Gestao.Imobiliaria.Web.csproj", "{9BFAA43C-C350-4101-8A16-4229E2E606B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academia.Programador.Bk.Gestao.Imobiliaria.Web", "Academia.Programador.Bk.Gestao.Imobiliaria.Web\Academia.Programador.Bk.Gestao.Imobiliaria.Web.csproj", "{9BFAA43C-C350-4101-8A16-4229E2E606B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academia.Programador.Bk.Gestao.Imobiliaria.Tests", "Academia.Programador.Bk.Gestao.Imobiliaria.Tests\Academia.Programador.Bk.Gestao.Imobiliaria.Tests.csproj", "{1C82E7F8-38CA-4EA3-A002-BE99CA1FB7D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academia.Programador.Bk.Gestao.Imobiliaria.Tests", "Academia.Programador.Bk.Gestao.Imobiliaria.Tests\Academia.Programador.Bk.Gestao.Imobiliaria.Tests.csproj", "{1C82E7F8-38CA-4EA3-A002-BE99CA1FB7D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{842640A7-A810-4E46-9064-8C15DA61995E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\README.md = ..\..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
