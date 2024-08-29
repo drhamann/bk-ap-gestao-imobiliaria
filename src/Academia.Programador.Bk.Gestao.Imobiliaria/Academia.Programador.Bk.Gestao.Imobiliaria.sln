@@ -19,9 +19,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academia.Programador.Bk.Ges
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academia.Programador.Bk.Gestao.Imobiliaria.Tests", "Academia.Programador.Bk.Gestao.Imobiliaria.Tests\Academia.Programador.Bk.Gestao.Imobiliaria.Tests.csproj", "{1C82E7F8-38CA-4EA3-A002-BE99CA1FB7D5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{842640A7-A810-4E46-9064-8C15DA61995E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Docs", "5 - Docs", "{842640A7-A810-4E46-9064-8C15DA61995E}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\README.md = ..\..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{B500A51D-CD2A-4239-AA21-A95F7F420BD3}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\docs\DataBase\script_inicial.sql = ..\..\docs\DataBase\script_inicial.sql
 	EndProjectSection
 EndProject
 Global
@@ -55,6 +60,7 @@ Global
 		{2151CAC2-478B-4700-9C85-849E7B7F8F0D} = {12F15B04-1F22-4273-8944-D3437AF21F19}
 		{9BFAA43C-C350-4101-8A16-4229E2E606B4} = {56756ED5-2807-4D62-849F-427BF5F822A3}
 		{1C82E7F8-38CA-4EA3-A002-BE99CA1FB7D5} = {653F425B-3F53-48C2-AFF1-42D6F125601B}
+		{B500A51D-CD2A-4239-AA21-A95F7F420BD3} = {842640A7-A810-4E46-9064-8C15DA61995E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {39FCA1FE-B541-4185-AAF4-99A4D644217B}
