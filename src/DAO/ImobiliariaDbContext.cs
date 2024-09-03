@@ -1,16 +1,28 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Academia.Programador.Bk.Gestao.Imobiliaria.DAO.Configurations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web;
 
+
+// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+
 public partial class ImobiliariaDbContext : DbContext
 {
-    public ImobiliariaDbContext()
+    private string ConnectionString { get; set; }
+    public ImobiliariaDbContext(IOptions<ConnectionStrings> options)
     {
+        ConnectionStrings conexoes = options.Value;
+
+        ConnectionString = conexoes.Master;
     }
 
-    public ImobiliariaDbContext(DbContextOptions<ImobiliariaDbContext> options)
+    public ImobiliariaDbContext(IOptions<ConnectionStrings> optionsObject, DbContextOptions<ImobiliariaDbContext> options)
         : base(options)
     {
+        ConnectionStrings conexoes = optionsObject.Value;
+
+        ConnectionString = conexoes.Master;
     }
 
     public virtual DbSet<Cliente> Clientes { get; set; }
@@ -24,8 +36,9 @@ public partial class ImobiliariaDbContext : DbContext
     public virtual DbSet<MensagensContato> MensagensContatos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=localhost,1433;Database=ImobiliariaDB;User Id=sa;Password=1q2w3e4r@#$;TrustServerCertificate=True");
+    {
+        optionsBuilder.UseSqlServer(ConnectionString);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

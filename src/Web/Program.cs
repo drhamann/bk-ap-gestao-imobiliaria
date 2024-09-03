@@ -1,3 +1,5 @@
+using Academia.Programador.Bk.Gestao.Imobiliaria.DAO.Configurations;
+
 namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web
 {
     public class Program
@@ -8,8 +10,13 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //IOC
+            //Injeção de dependencia
             builder.Services.AddTransient<ImobiliariaDbContext>();
 
+            builder.Services.Configure<ConnectionStrings>(
+                builder.Configuration.GetSection("ConnectionStrings"));
 
             var app = builder.Build();
 
@@ -26,7 +33,7 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Clientes}/{action=Index}/{id?}");
 
             app.Run();
         }
