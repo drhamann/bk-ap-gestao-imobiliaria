@@ -8,6 +8,8 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddTransient<ImobiliariaDbContext>();
+
 
             var app = builder.Build();
 
