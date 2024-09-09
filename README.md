@@ -78,3 +78,6 @@ Para garantir que sua imobiliária fosse um sucesso, John precisava de um sistema
 
   - Pasta de documentação, como scripts de banco
 
+Comando para gerar modelos de classe baseado nas tabelas.
+
+  dotnet ef dbcontext scaffold "Server=localhost,1433;Database=ImobiliariaDB;User Id=sa;Password=1q2w3e4r@#$;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer 
