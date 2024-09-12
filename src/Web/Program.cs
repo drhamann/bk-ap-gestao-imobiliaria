@@ -6,6 +6,9 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web
     {
         public static void Main(string[] args)
         {
+            //SEED
+
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -19,6 +22,10 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web
                 builder.Configuration.GetSection("ConnectionStrings"));
 
             var app = builder.Build();
+
+
+            var db = app.Services.GetService<ImobiliariaDbContext>();
+            db.Seed();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

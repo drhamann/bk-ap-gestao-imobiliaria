@@ -148,4 +148,10 @@ public partial class ImobiliariaDbContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    public void Seed()
+    {
+        this.Database.EnsureCreated();
+
+    }
 }
