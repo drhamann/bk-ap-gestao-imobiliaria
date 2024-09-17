@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  academia.programador.bk.gestao.imobiliaria.web:
+    image: ${DOCKER_REGISTRY-}academiaprogramadorbkgestaoimobiliariaweb
+    build:
+      context: .
+      dockerfile: Web/Dockerfile
+    depends_on:
+      - sqlserver.academia
+
+  sqlserver.academia:
+    image: mcr.microsoft.com/mssql/server:latest
+    container_name: sqlserver.academia
+    environment:
+     SA_PASSWORD: "1q2w3e4r@#$"  # Replace with your desired SQL Server SA password
+     ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"

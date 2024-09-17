@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Testes", "4-Testes", "{65
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Docs", "5 - Docs", "{842640A7-A810-4E46-9064-8C15DA61995E}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\README.md = ..\..\README.md
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{B500A51D-CD2A-4239-AA21-A95F7F420BD3}"
@@ -28,6 +28,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academia.Programador.Bk.Gestao.Imobiliaria.DAO", "DAO\Academia.Programador.Bk.Gestao.Imobiliaria.DAO.csproj", "{1C8168D2-4631-4FF6-A4ED-347215360340}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academia.Programador.Bk.Gestao.Imobiliaria.Tests", "Tests\Academia.Programador.Bk.Gestao.Imobiliaria.Tests.csproj", "{2AA13F62-FF2D-42DA-9CB3-904AA904A483}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E0357BCA-F720-423B-BB8F-AEFB1A4917CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{2AA13F62-FF2D-42DA-9CB3-904AA904A483}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AA13F62-FF2D-42DA-9CB3-904AA904A483}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AA13F62-FF2D-42DA-9CB3-904AA904A483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0357BCA-F720-423B-BB8F-AEFB1A4917CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0357BCA-F720-423B-BB8F-AEFB1A4917CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0357BCA-F720-423B-BB8F-AEFB1A4917CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0357BCA-F720-423B-BB8F-AEFB1A4917CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

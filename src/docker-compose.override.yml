@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  academia.programador.bk.gestao.imobiliaria.web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "8080"
