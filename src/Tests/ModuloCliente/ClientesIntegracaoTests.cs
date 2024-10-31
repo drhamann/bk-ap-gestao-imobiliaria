@@ -37,7 +37,7 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Tests.ModuloCliente
             // Arrange
             var context = CreateDbContext();
             var repositorio = new ClienteRepositorio(context);
-            var service = new ServiceCliente(repositorio);
+            var service = new ServiceCliente(repositorio, null);
             var controller = new ClientesController(service);
 
             // Act
@@ -55,7 +55,7 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Tests.ModuloCliente
             // Arrange
             var context = CreateDbContext();
             var repositorio = new ClienteRepositorio(context);
-            var service = new ServiceCliente(repositorio);
+            var service = new ServiceCliente(repositorio, null);
             var controller = new ClientesController(service);
 
             // Act
@@ -74,7 +74,7 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Tests.ModuloCliente
             // Arrange
             var context = CreateDbContext();
             var repositorio = new ClienteRepositorio(context);
-            var service = new ServiceCliente(repositorio);
+            var service = new ServiceCliente(repositorio, null);
             var controller = new ClientesController(service);
             var clienteViewModel = new CreateClienteViewModel { Nome = "Novo Cliente", Cpf = "12345678902", Email = "novo@cliente.com" };
 
@@ -97,7 +97,7 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Tests.ModuloCliente
             // Arrange
             var context = CreateDbContext();
             var repositorio = new ClienteRepositorio(context);
-            var service = new ServiceCliente(repositorio);
+            var service = new ServiceCliente(repositorio, null);
             var controller = new ClientesController(service);
             var clienteViewModel = new ClienteViewModel { ClienteId = 1, Nome = "Cliente Atualizado" };
 
@@ -119,7 +119,7 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Tests.ModuloCliente
             // Arrange
             var context = CreateDbContext();
             var repositorio = new ClienteRepositorio(context);
-            var service = new ServiceCliente(repositorio);
+            var service = new ServiceCliente(repositorio, null);
             var controller = new ClientesController(service);
 
             // Act

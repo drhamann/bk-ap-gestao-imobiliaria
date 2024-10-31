@@ -20,7 +20,7 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.DAO.Repositorios.EF
 
         public List<Cliente> TragaTodosClientes()
         {
-            return _context.Clientes.AsNoTracking().ToList();
+            return _context.Clientes.Include(x => x.Usuario).AsNoTracking().ToList();
         }
 
         public void SalvarCliente(Cliente cliente)

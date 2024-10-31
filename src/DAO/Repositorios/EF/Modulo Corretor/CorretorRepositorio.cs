@@ -20,7 +20,7 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.DAO.Repositorios.EF.Modulo_
 
         public List<Corretor> TragaTodosCorretores()
         {
-            return _context.Corretores.AsNoTracking().ToList();
+            return _context.Corretores.Include(x => x.Usuario).AsNoTracking().ToList();
         }
 
         public void SalvarCorretor(Corretor Corretor)

@@ -4,6 +4,7 @@ using Academia.Programador.Bk.Gestao.Imobiliaria.DAO.Repositorios.EF.Modulo_Imov
 using Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.ModuloCliente;
 using Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.ModuloCorretor;
 using Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.ModuloImovel;
+using Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.ModuloUsuario;
 using Academia.Programador.Bk.Gestao.Imobiliaria.Web;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,8 @@ public partial class ImobiliariaDbContext : DbContext
     public virtual DbSet<Imovel> Imoveis { get; set; }
 
     public virtual DbSet<MensagensContato> MensagensContatos { get; set; }
+    public virtual DbSet<Usuario> Usuarios { get; set; }
+    public virtual DbSet<Perfil> Perfis { get; set; }
 
     public ImobiliariaDbContext(DbContextOptions<ImobiliariaDbContext> options) : base(options)
     {
@@ -33,11 +36,12 @@ public partial class ImobiliariaDbContext : DbContext
         ClienteEntityConfiguration clienteEntityConfiguration = new();
         CorretorEntityConfiguration corretorEntityConfiguration = new();
         ImovelEntityConfiguration imovelEntityConfiguration = new();
-
+        UsuarioEntityConfiguration usuarioEntityConfiguration = new();
 
         modelBuilder.ApplyConfiguration(clienteEntityConfiguration);
         modelBuilder.ApplyConfiguration(corretorEntityConfiguration);
         modelBuilder.ApplyConfiguration(imovelEntityConfiguration);
+        modelBuilder.ApplyConfiguration(usuarioEntityConfiguration);
 
 
         modelBuilder.Entity<Favorito>(entity =>
@@ -104,6 +108,19 @@ public partial class ImobiliariaDbContext : DbContext
             SaveChanges();
         }
 
+        if (Clientes.Count() == 0)
+        {
+            Cliente cliente = new()
+            {
+                Cpf = "12345678915",
+                Email = "john@devolta.com",
+                Nome = "John 4",
+                Telefone = "666 99996669"
+            };
+            Clientes.Add(cliente);
+            SaveChanges();
+        }
+
         if (Imoveis.Count() == 0)
         {
             Imovel imovel = new Imovel()
@@ -114,7 +131,6 @@ public partial class ImobiliariaDbContext : DbContext
                 Descricao = "descricao",
                 Endereco = "na nuvem de poeira",
                 Disponivel = true,
-                Fotos = "A estudas lista json",
                 Negocio = 1,
                 Tipo = 1,
                 Valor = 2300000
@@ -123,5 +139,40 @@ public partial class ImobiliariaDbContext : DbContext
             SaveChanges();
         }
 
+        if (Usuarios.Count() == 0)
+        {
+            Usuarios.Add(new()
+            {
+                Email = "john2@wick.com",
+                Nome = "John2",
+                SenhaHash = "AQAAAAIAAYagAAAAEAcwH8ucYtATRdWjLP2Rz6CXgDRW7w6I2q15wZcuyWkPa2QwIEM43l6cCdfwx1edOw==",
+                Perfil = new Perfil() { Nome = "Cliente" }//1
+            });
+            Usuarios.Add(new()
+            {
+                Email = "john3@wick.com",
+                Nome = "John3",
+                SenhaHash = "AQAAAAIAAYagAAAAEAcwH8ucYtATRdWjLP2Rz6CXgDRW7w6I2q15wZcuyWkPa2QwIEM43l6cCdfwx1edOw==",
+                Perfil = new Perfil() { Nome = "Corretor" }//2
+            });
+            Usuarios.Add(new()
+            {
+                Email = "john@wick.com",
+                Nome = "John",
+                SenhaHash = "AQAAAAIAAYagAAAAEAcwH8ucYtATRdWjLP2Rz6CXgDRW7w6I2q15wZcuyWkPa2QwIEM43l6cCdfwx1edOw==",
+                Perfil = new Perfil() { Nome = "Administrador" }//3
+            });
+            SaveChanges();
+        }
+
+        if (Perfis.Count() == 0)
+        {
+            Perfis.Add(new Perfil() { Nome = "Cliente" });
+            Perfis.Add(new Perfil() { Nome = "Corretor" });
+            Perfis.Add(new Perfil() { Nome = "Administrador" });
+            SaveChanges();
+        }
+
+        Perfil.Perfis = Perfis.ToList();
     }
 }

@@ -1,9 +1,11 @@
 ﻿using Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.ModuloCorretor;
 using Academia.Programador.Bk.Gestao.Imobiliaria.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web.Controllers
 {
+    [Authorize(Roles = "Corretor")]
     public class CorretoresController : BaseController
     {
         private readonly IServiceCorretor _serviceCorretor;

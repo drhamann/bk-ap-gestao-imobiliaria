@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web.Views
 {
-
+    [Authorize(Roles = "Administrador,Cliente")]
     public class ClientesController : BaseController
     {
         private readonly IServiceCliente _serviceCliente;

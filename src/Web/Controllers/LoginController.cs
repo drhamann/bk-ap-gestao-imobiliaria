@@ -1,4 +1,6 @@
 ﻿using Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.ModuloLogin;
+using Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.ModuloUsuario;
+using Academia.Programador.Bk.Gestao.Imobiliaria.Web.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -10,9 +12,9 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web.Controllers
     {
         private readonly ILoginService _loginService;
 
-        public LoginController()
+        public LoginController(ILoginService loginService)
         {
-            _loginService = new LoginService();
+            _loginService = loginService;
         }
 
         public IActionResult Login(string returnUrl = "")
@@ -23,17 +25,17 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web.Controllers
                 return RedirectToAction("Index", $"Clientes");
             }
 
-            return View();
+            return View(new LoginViewModel());
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string senha, string returnUrl = "")
+        public IActionResult Login(LoginViewModel loginViewModel)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    Usuario user = _loginService.Autenticar(email, senha);
+                    Usuario user = _loginService.Autenticar(loginViewModel.Email, loginViewModel.Senha);
 
                     var claims = new List<Claim>
                     {
@@ -82,13 +84,13 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web.Controllers
                 {
                     ModelState.AddModelError(string.Empty, e.Message);
 
-                    return View();
+                    return View(loginViewModel);
                 }
 
 
                 return RedirectToAction("Index", $"Clientes");
             }
-            return View();
+            return View(loginViewModel);
         }
 
         public IActionResult Logout()
@@ -97,6 +99,12 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.Web.Controllers
                 CookieAuthenticationDefaults.AuthenticationScheme).Wait();
 
             return RedirectToAction("Index", $"Clientes");
+        }
+
+        public IActionResult Denied()
+        {
+
+            return View();
         }
     }
 }

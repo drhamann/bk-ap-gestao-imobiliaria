@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,6 +27,8 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Index">Clientes</a>
                             </li>
+
+
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Corretores" asp-action="Index">Corretores</a>
                             </li>
@@ -38,13 +42,16 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="MensagensContatoes" asp-action="Index">Mensagens</a>
                             </li>
-                           
                             <li class="nav-item">
-                                <span class="navbar-text">
-                                    🧑 Welcome, @User.Identity.Name
-                                </span>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
                             </li>
-                            <li class="nav-item">
+                           
+                            <li class="nav-item float-end">
+                                <p class="nav-link text-dark">
+                                    🧑 Welcome, @User.Identity.Name 
+                                </p>
+                            </li>
+                            <li class="nav-item ">
                                 <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Logout">🚪 Logout</a>
                             </li>
                         }

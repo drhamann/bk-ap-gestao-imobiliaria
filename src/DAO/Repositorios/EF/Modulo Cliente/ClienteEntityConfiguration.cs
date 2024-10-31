@@ -1,4 +1,5 @@
 ﻿using Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.ModuloCliente;
+using Academia.Programador.Bk.Gestao.Imobiliaria.Dominio.ModuloUsuario;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -19,6 +20,12 @@ namespace Academia.Programador.Bk.Gestao.Imobiliaria.DAO.Repositorios.EF.Modulo_
             builder.Property(e => e.Email).HasMaxLength(100);
             builder.Property(e => e.Nome).HasMaxLength(100);
             builder.Property(e => e.Telefone).HasMaxLength(20);
+
+            builder
+                .HasOne(e => e.Usuario)
+                .WithOne(e => e.Cliente)
+                .HasForeignKey<Usuario>(e => e.ClienteId)
+                .HasConstraintName("FK_Usuario_Cliente");
 
         }
     }

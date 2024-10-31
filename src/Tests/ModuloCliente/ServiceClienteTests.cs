@@ -10,7 +10,7 @@ public class ServiceClienteTests
     public ServiceClienteTests()
     {
         _mockRepositorio = new Mock<IClienteRepositorio>();
-        _serviceCliente = new ServiceCliente(_mockRepositorio.Object);
+        _serviceCliente = new ServiceCliente(_mockRepositorio.Object, null);
     }
 
     [Fact]
